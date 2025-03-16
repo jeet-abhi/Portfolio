@@ -14,6 +14,9 @@
             --software-color: #7ED321;
             --accent-color: #9C27B0;
             --project-color: #FF7B5B; /* New color for project nodes */
+            /* Inside :root variables */
+            --research-color: #E94EC6; /* Distinct purple-pink for research */
+            --glow-research: 0 0 15px rgba(233, 78, 198, 0.5); /* Glow for research nodes */
             
             /* Background Colors */
             --bg-primary: #0F1624;
@@ -331,6 +334,9 @@
                         <a href="#projects" class="nav-link" data-section="projects">Projects</a>
                     </li>
                     <li class="nav-item">
+                        <a href="#research" class="nav-link" data-section="research">Research</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="#skills" class="nav-link" data-section="skills">Skills</a>
                     </li>
                     <li class="nav-item">
@@ -584,6 +590,17 @@
             height: 70px;
             font-size: 0.75rem;
             box-shadow: var(--shadow-medium);
+        }
+
+        .node.research {
+            width: 90px;
+            height: 90px;
+            font-size: 0.8rem;
+            box-shadow: var(--shadow-strong);
+            z-index: 15;
+            /* Research nodes with a distinctive purple-pink gradient */
+            background: radial-gradient(circle at 30% 30%, #E94EC6, #B52296) !important;
+            box-shadow: var(--glow-research) !important;
         }
 
         .node.project {
@@ -2181,54 +2198,54 @@
                     </div>
                 `
             },
-            {
-                id: 'functional-safety',
-                name: 'GNN for Safety Analysis',
-                category: 'ml',
-                icon: 'fa-shield-halved',
-                description: 'Research paper on GNN for hardware fault prediction and analysis',
-                impact: 'Paper under review for VLSID',
-                year: 2024,
-                skills: ['gnn', 'verification', 'python'],
-                detailContent: `
-                    <h2>GNN for Functional Safety</h2>
-                    <div class="project-tag">Research Paper</div>
+            // {
+            //     id: 'functional-safety',
+            //     name: 'GNN for Safety Analysis',
+            //     category: 'ml',
+            //     icon: 'fa-shield-halved',
+            //     description: 'Research paper on GNN for hardware fault prediction and analysis',
+            //     impact: 'Paper under review for VLSID',
+            //     year: 2024,
+            //     skills: ['gnn', 'verification', 'python'],
+            //     detailContent: `
+            //         <h2>GNN for Functional Safety</h2>
+            //         <div class="project-tag">Research Paper</div>
                     
-                    <p>A novel approach using graph neural networks to enhance functional safety in hardware systems through improved failure mode analysis and fault injection techniques.</p>
+            //         <p>A novel approach using graph neural networks to enhance functional safety in hardware systems through improved failure mode analysis and fault injection techniques.</p>
                     
-                    <h3>Research Contributions</h3>
-                    <ul>
-                        <li>Developed graph-based representation of hardware components and failure pathways</li>
-                        <li>Implemented GNN algorithms to improve fault prediction accuracy</li>
-                        <li>Created automated methodologies for intelligent fault injection</li>
-                        <li>Paper submitted and under review for VLSID conference</li>
-                    </ul>
+            //         <h3>Research Contributions</h3>
+            //         <ul>
+            //             <li>Developed graph-based representation of hardware components and failure pathways</li>
+            //             <li>Implemented GNN algorithms to improve fault prediction accuracy</li>
+            //             <li>Created automated methodologies for intelligent fault injection</li>
+            //             <li>Paper submitted and under review for VLSID conference</li>
+            //         </ul>
                     
-                    <div class="paper-abstract">
-                        <h4>Abstract</h4>
-                        <p>This paper presents a novel approach to functional safety in hardware systems using graph neural networks. By representing circuit components and their relationships as nodes and edges in a graph, we demonstrate how GNNs can identify potential failure modes with higher accuracy than traditional methods. Our approach automates the fault injection process and improves coverage of potential failure scenarios, enhancing safety-critical systems verification.</p>
-                    </div>
+            //         <div class="paper-abstract">
+            //             <h4>Abstract</h4>
+            //             <p>This paper presents a novel approach to functional safety in hardware systems using graph neural networks. By representing circuit components and their relationships as nodes and edges in a graph, we demonstrate how GNNs can identify potential failure modes with higher accuracy than traditional methods. Our approach automates the fault injection process and improves coverage of potential failure scenarios, enhancing safety-critical systems verification.</p>
+            //         </div>
                     
-                    <div class="research-methodology">
-                        <h4>Methodology</h4>
-                        <ol>
-                            <li>Circuit representation as heterogeneous graphs</li>
-                            <li>Node feature engineering for component characteristics</li>
-                            <li>Edge attribute definition for signal propagation</li>
-                            <li>GNN training on known failure patterns</li>
-                            <li>Automated fault injection based on GNN predictions</li>
-                            <li>Verification coverage analysis and optimization</li>
-                        </ol>
-                    </div>
+            //         <div class="research-methodology">
+            //             <h4>Methodology</h4>
+            //             <ol>
+            //                 <li>Circuit representation as heterogeneous graphs</li>
+            //                 <li>Node feature engineering for component characteristics</li>
+            //                 <li>Edge attribute definition for signal propagation</li>
+            //                 <li>GNN training on known failure patterns</li>
+            //                 <li>Automated fault injection based on GNN predictions</li>
+            //                 <li>Verification coverage analysis and optimization</li>
+            //             </ol>
+            //         </div>
                     
-                    <div class="tech-stack">
-                        <div class="tech-item">Python</div>
-                        <div class="tech-item">GNN</div>
-                        <div class="tech-item">Fault Injection</div>
-                        <div class="tech-item">Safety Analysis</div>
-                    </div>
-                `
-            },
+            //         <div class="tech-stack">
+            //             <div class="tech-item">Python</div>
+            //             <div class="tech-item">GNN</div>
+            //             <div class="tech-item">Fault Injection</div>
+            //             <div class="tech-item">Safety Analysis</div>
+            //         </div>
+            //     `
+            // },
             {
                 id: 'beam-controller',
                 name: 'Antenna Beam Controller',
@@ -2385,12 +2402,12 @@
             { source: 'api', target: 'llm', strength: 0.7 },
             
             // Project connections
-            { source: 'llm-verification', target: 'functional-safety', strength: 0.7 },
+            // { source: 'llm-verification', target: 'functional-safety', strength: 0.7 },
             { source: 'meeting-assistant', target: 'llm-verification', strength: 0.6 },
             { source: 'neural-antenna', target: 'beam-controller', strength: 0.8 },
-            { source: 'functional-safety', target: 'risc-v', strength: 0.5 },
+            // { source: 'functional-safety', target: 'risc-v', strength: 0.5 },
             { source: 'llm-verification', target: 'meeting-assistant', strength: 0.7 },
-            { source: 'neural-antenna', target: 'functional-safety', strength: 0.6 }
+            // { source: 'neural-antenna', target: 'functional-safety', strength: 0.6 }
         ];
 
         // Tour steps configuration
@@ -2435,6 +2452,123 @@
                 content: "Feel free to interact with the visualization to learn more about my experience. Click on any node to get started!",
                 highlightSelector: null
             }
+        ];
+
+
+        // Research papers data
+        const researchPapers = [
+            {
+                id: 'gnn-safety',
+                name: 'GNN for Functional Safety',
+                category: 'research',
+                icon: 'fa-file-alt',
+                description: 'Improving Failure Mode Analysis and Fault Injection Using GNN Algorithms',
+                status: 'Under Review - VLSID Conference',
+                year: 2024,
+                skills: ['gnn', 'verification', 'python'],
+                detailContent: `
+                    <h2>GNN for Functional Safety in Hardware Systems</h2>
+                    <div class="project-tag">Research Paper</div>
+                    
+                    <p>A novel approach using graph neural networks to enhance functional safety in hardware systems through improved failure mode analysis and fault injection techniques.</p>
+                    
+                    <div class="paper-citation" style="margin: 1.5rem 0; padding: 1rem; background-color: rgba(233, 78, 198, 0.1); border-radius: 8px; border-left: 4px solid #E94EC6;">
+                        <h4>Citation</h4>
+                        <p>Singh, A., et al. (2024). "Improving Failure Mode Analysis and Fault Injection Using Graph Neural Networks for Enhanced Functional Safety." Under review for VLSID Conference.</p>
+                    </div>
+                    
+                    <h3>Research Contributions</h3>
+                    <ul>
+                        <li>Developed graph-based representation of hardware components and failure pathways</li>
+                        <li>Implemented GNN algorithms to improve fault prediction accuracy</li>
+                        <li>Created automated methodologies for intelligent fault injection</li>
+                        <li>Demonstrated 35% improvement in critical fault detection</li>
+                    </ul>
+                    
+                    <div class="paper-abstract">
+                        <h4>Abstract</h4>
+                        <p>This paper presents a novel approach to functional safety in hardware systems using graph neural networks. By representing circuit components and their relationships as nodes and edges in a graph, we demonstrate how GNNs can identify potential failure modes with higher accuracy than traditional methods. Our approach automates the fault injection process and improves coverage of potential failure scenarios, enhancing safety-critical systems verification.</p>
+                    </div>
+                    
+                    <div class="research-methodology">
+                        <h4>Methodology</h4>
+                        <ol>
+                            <li>Circuit representation as heterogeneous graphs</li>
+                            <li>Node feature engineering for component characteristics</li>
+                            <li>Edge attribute definition for signal propagation</li>
+                            <li>GNN training on known failure patterns</li>
+                            <li>Automated fault injection based on GNN predictions</li>
+                            <li>Verification coverage analysis and optimization</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <div class="tech-item">Python</div>
+                        <div class="tech-item">GNN</div>
+                        <div class="tech-item">PyTorch</div>
+                        <div class="tech-item">Fault Injection</div>
+                        <div class="tech-item">Safety Analysis</div>
+                    </div>
+                `
+            }
+            // {
+            //     id: 'neural-antenna',
+            //     name: 'Neural Network for Antenna Parameters',
+            //     category: 'research',
+            //     icon: 'fa-satellite-dish',
+            //     description: 'GNN Architecture for Predicting Antenna Parameters in Planar Arrays',
+            //     status: 'Ongoing DRDO Research',
+            //     year: 2023,
+            //     skills: ['gnn', 'python', 'pytorch'],
+            //     detailContent: `
+            //         <h2>Neural Network for Antenna Parameters</h2>
+            //         <div class="project-tag">DRDO Research</div>
+                    
+            //         <p>An innovative application of graph neural networks to model and predict complex antenna parameters in planar arrays, enabling faster optimization of military radar systems.</p>
+                    
+            //         <div class="paper-citation" style="margin: 1.5rem 0; padding: 1rem; background-color: rgba(233, 78, 198, 0.1); border-radius: 8px; border-left: 4px solid #E94EC6;">
+            //             <h4>Research Status</h4>
+            //             <p>Ongoing research in collaboration with Defence Research and Development Organisation (DRDO). Preliminary results presented at internal technical symposium.</p>
+            //         </div>
+                    
+            //         <h3>Technical Approach</h3>
+            //         <ul>
+            //             <li>Developed GNN architecture with node embeddings for antenna elements</li>
+            //             <li>Implemented graph convolutional layers to capture spatial and relational dependencies</li>
+            //             <li>Utilized mathematical simulation dataset for training and validation</li>
+            //             <li>Applied dropout and batch normalization for model stability</li>
+            //         </ul>
+                    
+            //         <div class="project-viz">
+            //             <div class="viz-caption">GNN Architecture for Antenna Parameter Prediction</div>
+            //             <div class="node-viz">
+            //                 <div class="node-block">Input Layer</div>
+            //                 <div class="node-arrow">↓</div>
+            //                 <div class="node-block">Graph Conv Layer</div>
+            //                 <div class="node-arrow">↓</div>
+            //                 <div class="node-block">Batch Norm</div>
+            //                 <div class="node-arrow">↓</div>
+            //                 <div class="node-block">Graph Conv Layer</div>
+            //                 <div class="node-arrow">↓</div>
+            //                 <div class="node-block">Dropout (0.3)</div>
+            //                 <div class="node-arrow">↓</div>
+            //                 <div class="node-block">Output Layer</div>
+            //             </div>
+            //         </div>
+                    
+            //         <div class="research-impact">
+            //             <h4>Research Impact</h4>
+            //             <p>This research enables rapid prediction of antenna parameters without expensive electromagnetic simulations, reducing design cycle time for military radar systems. The GNN approach captures complex interactions between antenna elements that traditional methods cannot model effectively.</p>
+            //         </div>
+                    
+            //         <div class="tech-stack">
+            //             <div class="tech-item">Python</div>
+            //             <div class="tech-item">PyTorch</div>
+            //             <div class="tech-item">GNN</div>
+            //             <div class="tech-item">MATLAB</div>
+            //         </div>
+            //     `
+            // }
         ];
 
         // =====================
@@ -2689,6 +2823,7 @@
             if (category === 'hw') return '#F5A623';
             if (category === 'sw') return '#7ED321';
             if (category === 'proj') return '#FF7B5B'; // Special color for project nodes
+            if (category === 'research') return '#E94EC6';
             return '#9C27B0'; // Default/about color
         }
     </script>
@@ -2782,6 +2917,51 @@
                             target: skillId,
                             strength: 0.5
                         });
+                    });
+                });
+
+                // Add additional connections for research papers
+                researchPapers.forEach(paper => {
+                    // Connect research papers to related skills
+                    paper.skills.forEach(skillId => {
+                        connections.push({
+                            source: paper.id,
+                            target: skillId,
+                            strength: 0.6
+                        });
+                    });
+                    
+                    // Connect research papers to related projects
+                    // if (paper.id === 'gnn-safety') {
+                    //     connections.push({
+                    //         source: paper.id,
+                    //         target: 'functional-safety',
+                    //         strength: 0.9
+                    //     });
+                    // }
+                    
+                    if (paper.id === 'neural-antenna') {
+                        connections.push({
+                            source: paper.id,
+                            target: 'beam-controller',
+                            strength: 0.8
+                        });
+                    }
+                });
+
+                // Add research paper nodes
+                researchPapers.forEach(paper => {
+                    nodeData.push({
+                        id: paper.id,
+                        name: paper.name,
+                        type: 'research',
+                        category: 'research', // Special category for styling research nodes
+                        description: paper.description,
+                        status: paper.status,
+                        icon: paper.icon,
+                        radius: 45, // Same size as project nodes
+                        x: Math.random() * neuralCircuit.offsetWidth,
+                        y: Math.random() * neuralCircuit.offsetHeight
                     });
                 });
                 
@@ -2911,6 +3091,11 @@
                 } else if (data.type === 'about') {
                     node.addEventListener('click', showAboutMe);
                 }
+                else if (data.type === 'research') {
+                    node.addEventListener('click', () => showResearchDetails(data.id));
+                    node.addEventListener('mouseenter', () => showResearchTooltip(data, node));
+                    node.addEventListener('mouseleave', hideTooltip);
+                }
                 
                 // Add to DOM and store reference
                 neuralCircuit.appendChild(node);
@@ -2933,6 +3118,7 @@
             }
         }
         
+
         // Create connections between nodes
         function createConnections(linkData) {
             try {
@@ -3337,6 +3523,126 @@
             });
         }
         
+
+
+        // Show research papers list in detail panel
+        function showResearchPapers() {
+            let content = `
+                <h2>Research Papers</h2>
+                <p>Click on any research paper to view details:</p>
+                <div class="research-grid">
+            `;
+            
+            // Sort papers by year (newest first)
+            const sortedPapers = [...researchPapers].sort((a, b) => b.year - a.year);
+            
+            sortedPapers.forEach(paper => {
+                content += `
+                    <div class="research-card" data-id="${paper.id}" style="
+                        background: linear-gradient(135deg, rgba(30, 45, 70, 0.8), rgba(15, 25, 40, 0.9));
+                        border-radius: 8px;
+                        padding: 1.5rem;
+                        margin-bottom: 1rem;
+                        cursor: pointer;
+                        transition: transform 0.2s, box-shadow 0.2s;
+                        border-left: 4px solid #E94EC6;
+                        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    ">
+                        <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                            <div style="
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 50%;
+                                background-color: #E94EC6;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                margin-right: 1rem;
+                            ">
+                                <i class="fas ${paper.icon}"></i>
+                            </div>
+                            <div>
+                                <h3 style="margin: 0;">${paper.name}</h3>
+                                <div style="font-size: 0.8rem; opacity: 0.7;">${paper.year}</div>
+                            </div>
+                        </div>
+                        <p>${paper.description}</p>
+                        <div style="
+                            background-color: rgba(233, 78, 198, 0.1);
+                            padding: 0.3rem 0.8rem;
+                            border-radius: 15px;
+                            font-size: 0.8rem;
+                            display: inline-block;
+                        ">${paper.status}</div>
+                    </div>
+                `;
+            });
+            
+            content += `</div>`;
+            
+            // Set panel content
+            panelContent.innerHTML = content;
+            detailPanel.classList.add('active');
+            
+            // Add click handlers to research cards
+            const researchCards = panelContent.querySelectorAll('.research-card');
+            researchCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const paperId = card.dataset.id;
+                    showResearchDetails(paperId);
+                });
+                
+                // Add hover effect
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px)';
+                    card.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        }
+
+        // Show research paper details
+        function showResearchDetails(paperId) {
+            const paper = researchPapers.find(p => p.id === paperId);
+            if (!paper) return;
+            
+            // Create pulse effect
+            createPulseEffect(paperId);
+            
+            // Set panel content
+            panelContent.innerHTML = paper.detailContent;
+            detailPanel.classList.add('active');
+            
+            // Highlight this project and related skills
+            highlightRelatedNodes(paperId);
+            
+            // Apply additional styling to research panel content
+            styleProjectPanel(); // Reuse the project styling function
+        }
+
+        // Show research paper tooltip
+        function showResearchTooltip(data, element) {
+            const rect = element.getBoundingClientRect();
+            const x = rect.left + (rect.width / 2);
+            const y = rect.top;
+            
+            let tooltipContent = `
+                <div class="tooltip-title">${data.name}</div>
+                <div class="tooltip-category" style="background-color: rgba(255,255,255,0.1); color: ${getCategoryColor('research')};">Research Paper</div>
+                <div class="tooltip-description">${data.description}</div>
+                <div class="tooltip-status">${data.status}</div>
+            `;
+            
+            tooltipElement.innerHTML = tooltipContent;
+            tooltipElement.style.left = `${x - tooltipElement.offsetWidth / 2}px`;
+            tooltipElement.style.top = `${y - tooltipElement.offsetHeight - 10}px`;
+            tooltipElement.style.opacity = '1';
+            tooltipElement.style.transform = 'translateY(0)';
+        }
         // Show about me details
         function showAboutMe() {
             // Create pulse effect
@@ -4799,29 +5105,33 @@
     }
     
     // Navigate to specific section
-    function navigateToSection(section) {
-        // Close any open panels first
-        detailPanel.classList.remove('active');
-        
-        // Handle specific sections
-        switch(section) {
-            case 'about':
-                showAboutMe();
-                break;
-                
-            case 'projects':
-                showProjectsList();
-                break;
-                
-            case 'skills':
-                showSkillsList();
-                break;
-                
-            case 'contact':
-                showContactInfo();
-                break;
-        }
+function navigateToSection(section) {
+    // Close any open panels first
+    detailPanel.classList.remove('active');
+    
+    // Handle specific sections
+    switch(section) {
+        case 'about':
+            showAboutMe();
+            break;
+            
+        case 'projects':
+            showProjectsList();
+            break;
+            
+        case 'research': // Add this case
+            showResearchPapers();
+            break;
+            
+        case 'skills':
+            showSkillsList();
+            break;
+            
+        case 'contact':
+            showContactInfo();
+            break;
     }
+}
     
     // Show projects list in detail panel
     function showProjectsList() {
