@@ -310,7 +310,7 @@
     <!-- Loading Screen -->
     <div class="loading-screen" id="loading-screen">
         <div class="circuit-loader"></div>
-        <div class="loading-text">Initializing...</div>
+        <div class="loading-text">Initializing Neural Circuit Interface</div>
         <div class="loading-progress">
             <div class="progress-bar" id="progress-bar"></div>
         </div>
@@ -2396,13 +2396,13 @@
         // Tour steps configuration
         const tourSteps = [
             {
-                title: "Welcome to my Neural Circuit Portfolio!",
-                content: "This interactive visualization represents my skills and projects as a neural network combined with circuit elements. Let me show you around.",
+                title: "Welcome to my Portfolio!",
+                content: "This interactive visualization represents my skills and projects. Let me show you around.",
                 highlightSelector: null
             },
             {
                 title: "About Me",
-                content: "Start here to learn about my background, education, and unique value as a Machine Learning and Hardware Engineer.",
+                content: "The purple node. Start here to learn about my background, education, and unique value as a Machine Learning and Hardware Engineer.",
                 highlightSelector: "#about" // This will highlight the about node
             },
             {
@@ -2415,11 +2415,11 @@
                 content: "The smaller nodes represent my technical skills. Blue nodes are ML-related, yellow are hardware-related, and green are software skills.",
                 highlightSelector: ".node.skill" // This will highlight all skill nodes
             },
-            {
-                title: "Connections",
-                content: "Lines between nodes show relationships. When you click a node, related skills and projects light up, showing information flow.",
-                highlightSelector: ".connection" // This will highlight connection lines
-            },
+            // {
+            //     title: "Connections",
+            //     content: "Lines between nodes show relationships. When you click a node, related skills and projects light up, showing information flow.",
+            //     highlightSelector: ".connection" // This will highlight connection lines
+            // },
             {
                 title: "Career Progression",
                 content: "Click this button to see my career progression visualized as waveforms on an oscilloscope display.",
@@ -2709,7 +2709,7 @@
             
             // Setup force simulation
             if (!setupForceSimulation()) {
-                showErrorMessage("Failed to initialize neural circuit simulation.");
+                showErrorMessage("Failed to initialize simulation.");
                 return false;
             }
             
