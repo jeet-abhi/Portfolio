@@ -1952,6 +1952,7 @@
         // =====================
         
         // Skill Categories
+  // Skill Categories
         const skillCategories = [
             {
                 id: 'ml',
@@ -1960,10 +1961,12 @@
                 icon: 'fa-brain',
                 skills: [
                     { id: 'llm', name: 'Large Language Models', level: 0.85, description: 'Expertise in prompt engineering and API integration for LLMs like Claude and GPT' },
-                    { id: 'gnn', name: 'Graph Neural Networks', level: 0.8, description: 'Designing GNN architectures for hardware component relationships' },
+                    { id: 'gnn', name: 'Graph Neural Networks', level: 0.8, description: 'Designing GNN architectures for hardware component relationships and fault prediction' },
                     { id: 'nlp', name: 'Natural Language Processing', level: 0.75, description: 'Text processing, analysis, and generation for technical domains' },
-                    { id: 'pytorch', name: 'PyTorch', level: 0.7, description: 'Deep learning framework for research and development' },
-                    { id: 'whisper', name: 'Speech Recognition', level: 0.65, description: 'Audio processing and transcription using Whisper technology' }
+                    { id: 'pytorch', name: 'PyTorch', level: 0.8, description: 'Deep learning framework for research and development' },
+                    { id: 'tf', name: 'TensorFlow/Keras', level: 0.75, description: 'Deep learning frameworks for model development' },
+                    { id: 'whisper', name: 'Speech Recognition', level: 0.7, description: 'Audio processing and transcription using Whisper technology' },
+                    { id: 'transformers', name: 'Transformers', level: 0.75, description: 'Working with attention-based models via Hugging Face' }
                 ]
             },
             {
@@ -1973,10 +1976,12 @@
                 icon: 'fa-microchip',
                 skills: [
                     { id: 'verilog', name: 'Verilog', level: 0.9, description: 'Hardware description language for digital circuit design' },
+                    { id: 'systemverilog', name: 'System Verilog', level: 0.85, description: 'Advanced HDL for complex digital systems' },
                     { id: 'fpga', name: 'FPGA', level: 0.85, description: 'Field-programmable gate array design and implementation' },
                     { id: 'uvm', name: 'UVM', level: 0.8, description: 'Universal Verification Methodology for hardware verification' },
-                    { id: 'verification', name: 'Verification', level: 0.85, description: 'Formal and assertion-based verification techniques' },
-                    { id: 'pcb', name: 'PCB Design', level: 0.7, description: 'Circuit board design and layout using industry-standard tools' }
+                    { id: 'verification', name: 'Formal Verification', level: 0.85, description: 'Formal and assertion-based verification techniques' },
+                    { id: 'pcb', name: 'PCB Design', level: 0.7, description: 'Circuit board design and layout using industry-standard tools' },
+                    { id: 'sysarch', name: 'System Architecture', level: 0.75, description: 'Designing complex hardware systems and interfaces' }
                 ]
             },
             {
@@ -1989,21 +1994,26 @@
                     { id: 'cpp', name: 'C++', level: 0.7, description: 'System-level programming and hardware interfaces' },
                     { id: 'tkinter', name: 'Tkinter', level: 0.8, description: 'GUI development for internal tools and applications' },
                     { id: 'api', name: 'API Integration', level: 0.75, description: 'RESTful API consumption and service integration' },
-                    { id: 'aws', name: 'AWS', level: 0.6, description: 'Cloud computing and service deployment' }
+                    { id: 'aws', name: 'AWS', level: 0.7, description: 'Cloud computing and service deployment' },
+                    { id: 'mlops', name: 'MLOps', level: 0.65, description: 'Model serving, Docker, and deployment pipelines' },
+                    { id: 'git', name: 'Git & Version Control', level: 0.8, description: 'Source code management and collaborative development' },
+                    { id: 'sql', name: 'SQL', level: 0.7, description: 'Database querying and data extraction' },
+                    { id: 'linux', name: 'Linux/Unix', level: 0.75, description: 'Shell scripting and system administration' }
                 ]
             }
         ];
 
         // Projects with extended details
+            // Projects with extended details
         const projects = [
             {
                 id: 'llm-verification',
                 name: 'LLM for Hardware Verification',
                 category: 'ml',
                 icon: 'fa-magnifying-glass-chart',
-                description: 'Developed LLM prompts for assertion-based verification with a Python UI for Claude API integration',
+                description: 'Developed specialized prompts for hardware verification with Claude 3.5 Sonnet API integration',
                 impact: 'Reduced assertion writing time by 50%',
-                year: 2025,
+                year: 2024,
                 skills: ['llm', 'python', 'nlp', 'verification', 'api', 'tkinter', 'aws'],
                 detailContent: `
                     <h2>LLM Integration for Hardware Verification</h2>
@@ -2074,7 +2084,7 @@
                 name: 'Meeting Assistant AI',
                 category: 'ml',
                 icon: 'fa-calendar-check',
-                description: 'Automated meeting assistant that joins WebEx calls, transcribes conversations, and generates meeting minutes',
+                description: 'Created system to automate meeting participation, recording, and documentation using Whisper and Claude API',
                 impact: 'Fully automated documentation',
                 year: 2024,
                 skills: ['python', 'whisper', 'nlp', 'llm', 'api'],
@@ -2150,8 +2160,8 @@
                 name: 'GNN for Antenna Parameters',
                 category: 'ml',
                 icon: 'fa-satellite-dish',
-                description: 'GNN architecture for predicting antenna parameters in 8x8 Planar Array',
-                impact: 'Ongoing DRDO Research',
+                description: 'Developing GNN architecture for antenna parameter modeling in planar arrays',
+                impact: 'DRDO Research Project',
                 year: 2023,
                 skills: ['gnn', 'python', 'pytorch'],
                 detailContent: `
@@ -2166,6 +2176,7 @@
                         <li>Implemented graph convolutional layers to capture spatial and relational dependencies</li>
                         <li>Utilized mathematical simulation dataset for training and validation</li>
                         <li>Applied dropout and batch normalization for model stability</li>
+                        <li>Developed model to reduce electromagnetic simulation requirements</li>
                     </ul>
                     
                     <div class="project-viz">
@@ -2203,10 +2214,10 @@
             //     name: 'GNN for Safety Analysis',
             //     category: 'ml',
             //     icon: 'fa-shield-halved',
-            //     description: 'Research paper on GNN for hardware fault prediction and analysis',
-            //     impact: 'Presented the Paper in VLSID Conference 2025',
+            //     description: 'Researched graph neural networks for hardware fault prediction and analysis',
+            //     impact: 'Paper presented at VLSID Conference 2025',
             //     year: 2024,
-            //     skills: ['gnn', 'verification', 'python'],
+            //     skills: ['gnn', 'verification', 'python', 'pytorch'],
             //     detailContent: `
             //         <h2>GNN for Functional Safety</h2>
             //         <div class="project-tag">Research Paper</div>
@@ -2218,7 +2229,8 @@
             //             <li>Developed graph-based representation of hardware components and failure pathways</li>
             //             <li>Implemented GNN algorithms to improve fault prediction accuracy</li>
             //             <li>Created automated methodologies for intelligent fault injection</li>
-            //             <li>Presented the Paper in VLSID Conference 2025</li>
+            //             <li>Demonstrated 35% improvement in critical fault detection</li>
+            //             <li>Presented findings at VLSID Conference 2025</li>
             //         </ul>
                     
             //         <div class="paper-abstract">
@@ -2240,6 +2252,7 @@
                     
             //         <div class="tech-stack">
             //             <div class="tech-item">Python</div>
+            //             <div class="tech-item">PyTorch</div>
             //             <div class="tech-item">GNN</div>
             //             <div class="tech-item">Fault Injection</div>
             //             <div class="tech-item">Safety Analysis</div>
@@ -2373,41 +2386,48 @@
         ];
 
         // Career progression data for oscilloscope visualization
+// Career progression data for oscilloscope visualization
         const careerData = [
-            { year: 2021, hardware: 0.7, ml: 0.2, complexity: 0.3, label: 'University Projects' },
-            { year: 2022, hardware: 0.8, ml: 0.3, complexity: 0.4, label: 'RISC-V Implementation' },
-            { year: 2023, hardware: 0.85, ml: 0.5, complexity: 0.6, label: 'DRDO Internship' },
-            { year: 2024, hardware: 0.8, ml: 0.7, complexity: 0.7, label: 'ML Research' },
+            { year: 2020, hardware: 0.6, ml: 0.2, complexity: 0.3, label: 'University Studies Begin' },
+            { year: 2021, hardware: 0.7, ml: 0.3, complexity: 0.4, label: 'University Projects' },
+            { year: 2022, hardware: 0.8, ml: 0.4, complexity: 0.5, label: 'RISC-V Implementation' },
+            { year: 2023, hardware: 0.85, ml: 0.6, complexity: 0.7, label: 'DRDO Internship' },
             { year: 2024, hardware: 0.8, ml: 0.8, complexity: 0.8, label: 'Texas Instruments - Emerging Talent Award' },
-            { year: 2025, hardware: 0.9, ml: 0.9, complexity: 0.9, label: 'Texas Instruments' }
+            { year: 2025, hardware: 0.9, ml: 0.9, complexity: 0.9, label: 'VLSID Conference Paper' }
         ];
 
         // Connections between nodes
+ // Connections between nodes
         const connections = [
             // ML to Hardware connections
             { source: 'llm', target: 'verification', strength: 0.8 },
             { source: 'gnn', target: 'verilog', strength: 0.6 },
             { source: 'nlp', target: 'uvm', strength: 0.5 },
             { source: 'pytorch', target: 'fpga', strength: 0.4 },
+            { source: 'tf', target: 'systemverilog', strength: 0.5 },
             
             // Hardware to Software connections
             { source: 'verilog', target: 'python', strength: 0.6 },
             { source: 'fpga', target: 'cpp', strength: 0.7 },
             { source: 'verification', target: 'api', strength: 0.5 },
+            { source: 'systemverilog', target: 'linux', strength: 0.6 },
+            { source: 'uvm', target: 'git', strength: 0.5 },
             
             // Software to ML connections
             { source: 'python', target: 'llm', strength: 0.9 },
             { source: 'python', target: 'gnn', strength: 0.8 },
             { source: 'python', target: 'pytorch', strength: 0.7 },
             { source: 'api', target: 'llm', strength: 0.7 },
+            { source: 'mlops', target: 'transformers', strength: 0.6 },
+            { source: 'linux', target: 'tf', strength: 0.5 },
             
             // Project connections
-            // { source: 'llm-verification', target: 'functional-safety', strength: 0.7 },
+            // { source: 'functional-safety', target: 'gnn-safety', strength: 0.9 },
             { source: 'meeting-assistant', target: 'llm-verification', strength: 0.6 },
             { source: 'neural-antenna', target: 'beam-controller', strength: 0.8 },
             // { source: 'functional-safety', target: 'risc-v', strength: 0.5 },
             { source: 'llm-verification', target: 'meeting-assistant', strength: 0.7 },
-            // { source: 'neural-antenna', target: 'functional-safety', strength: 0.6 }
+            { source: 'neural-antenna', target: 'gnn-safety', strength: 0.9 }
         ];
 
         // Tour steps configuration
@@ -2752,10 +2772,9 @@
         }
         
         // Complete the initialization process
-        function completeInitialization() {
-            // Activate simulation
-            simulationActive = true;
 
+        // Function to add the award badge to the neural circuit
+        function addAwardBadge() {
             const awardBadge = document.createElement('div');
             awardBadge.className = 'award-badge';
             awardBadge.innerHTML = '<i class="fas fa-award"></i>';
@@ -2790,7 +2809,7 @@
             
             // Add click functionality to show details
             awardBadge.addEventListener('click', () => {
-                showAboutMe();  // This will open the About panel which should include award details
+                showAboutMe();  // This will open the About panel which includes award details
             });
             
             // Append to neural circuit
@@ -2798,9 +2817,15 @@
             
             // Add a subtle animation to draw attention
             awardBadge.style.animation = 'pulse 2s infinite';
-            
-            // Hide loading screen with a delay
+        }
 
+        // Update the completeInitialization function to include the award badge
+        function completeInitialization() {
+            // Activate simulation
+            simulationActive = true;
+
+            // Add award badge
+            addAwardBadge();
             
             // Hide loading screen with a delay
             setTimeout(() => {
@@ -3644,6 +3669,7 @@
             tooltipElement.style.transform = 'translateY(0)';
         }
         // Show about me details
+// Function to generate updated About Me content
         function showAboutMe() {
             // Create pulse effect
             createPulseEffect('about');
@@ -3660,7 +3686,6 @@
                         <p><strong>Emerging Talent Award</strong> - Texas Instruments, 2024</p>
                         <p>Recognized for exceptional contributions to AI integration in hardware verification workflows and demonstrating outstanding potential in bridging ML and hardware engineering.</p>
                     </div>
-
 
                     <div style="margin-top: 1.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(74, 144, 226, 0.2) 0%, rgba(245, 166, 35, 0.2) 100%); border-radius: 8px;">
                         <h3>My Unique Value</h3>
@@ -3680,6 +3705,13 @@
                     <p><strong>Motilal Nehru National Institute of Technology, Prayagraj</strong><br>
                     Bachelor of Technology - Electronics and Communication Engineering<br>
                     2020-2024 | GPA: 8.05</p>
+                </div>
+                
+                <div class="section-container">
+                    <h3>Research Publication</h3>
+                    <p><strong>"Improving Failure Mode Analysis and Fault Injection Using GNN Algorithms"</strong><br>
+                    VLSID Conference 2025<br>
+                    Demonstrated 35% improvement in critical fault detection using graph neural networks</p>
                 </div>
                 
                 <div class="section-container">
@@ -3720,7 +3752,7 @@
             
             detailPanel.classList.add('active');
         }
-        
+                
         // Tooltip functions
         function showSkillTooltip(data, element) {
             const category = skillCategories.find(cat => cat.id === data.category);
@@ -4812,187 +4844,225 @@
     // =====================
     
     // Resume download function - Fixed to work properly
+// Resume download function - Updated with resume content from PDF
     function handleResumeDownload() {
         console.log("Generating and downloading resume...");
         
-        // Create a downloadable resume in HTML format
+        // Create a downloadable resume in HTML format with updated content
         const resumeHTML = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abhijeet Singh - Resume</title>
-<style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 20px;
-        color: #333;
-    }
-    h1 {
-        color: #4A90E2;
-        border-bottom: 2px solid #F5A623;
-        padding-bottom: 10px;
-    }
-    h2 {
-        color: #4A90E2;
-        margin-top: 25px;
-    }
-    .header {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-    .contact {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .section {
-        margin-bottom: 30px;
-    }
-    .job {
-        margin-bottom: 20px;
-    }
-    .job-title {
-        font-weight: bold;
-        color: #555;
-    }
-    .job-company {
-        font-weight: bold;
-    }
-    .job-date {
-        color: #777;
-        font-style: italic;
-    }
-    .skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-    .skill {
-        background-color: #f0f0f0;
-        padding: 5px 10px;
-        border-radius: 15px;
-        font-size: 0.9em;
-    }
-    ul {
-        padding-left: 20px;
-    }
-</style>
-</head>
-<body>
-<div class="header">
-    <h1>ABHIJEET SINGH</h1>
-</div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijeet Singh - Resume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #4A90E2;
+            border-bottom: 2px solid #F5A623;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: #4A90E2;
+            margin-top: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .subheader {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .contact {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .job {
+            margin-bottom: 20px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: #555;
+        }
+        .job-company {
+            font-weight: bold;
+        }
+        .job-date {
+            color: #777;
+            font-style: italic;
+            float: right;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .skill {
+            background-color: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .project {
+            margin-bottom: 15px;
+        }
+        .project-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .project-tech {
+            color: #4A90E2;
+            font-style: italic;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="header">
+        <h1>ABHIJEET SINGH</h1>
+    </div>
 
-<div class="contact">
-    <p>+91-7607475920 | abhijeet211011@gmail.com | linkedin.com/in/jeet-abhi</p>
-</div>
+    <div class="subheader">
+        Machine Learning — Hardware Integration — Python — Neural Networks — LLMs
+    </div>
 
-<div class="section">
-    <h2>PROFESSIONAL SUMMARY</h2>
-    <p>Machine Learning Engineer with expertise in developing and deploying AI solutions for hardware design and verification workflows. Skilled in large language model integration, graph neural networks, and hardware design. Unique background combining digital electronics and machine learning for innovative hardware-AI solutions.</p>
-</div>
+    <div class="contact">
+        <p>+91-7607475920 — abhijeet211011@gmail.com — linkedin.com/in/jeet-abhi</p>
+    </div>
 
-<div class="section">
-    <h2>EXPERIENCE</h2>
-    
-    <div class="job">
-        <div class="job-title">Digital Design Verification Engineer / Machine Learning Engineer</div>
-        <div class="job-company">Texas Instruments, Bangalore, India</div>
-        <div class="job-date">January 2024 - Present</div>
+    <div class="section">
+        <h2>SUMMARY</h2>
+        <p>Digital Design Dev Programmer with demonstrated experience applying machine learning to hardware systems. Specialized in large language model integration, graph neural networks, and natural language processing for technical applications. Successfully reduced verification time by 50% through AI implementation. Seeking to leverage machine learning expertise in a new role focused on AI applications.</p>
+    </div>
+
+    <div class="section">
+        <h2>PROFESSIONAL EXPERIENCE</h2>
+        
+        <div class="job">
+            <div class="job-title">Digital Design Dev Programmer</div>
+            <div class="job-company">Texas Instruments</div>
+            <div class="job-date">January 2024 – Present</div>
+            <ul>
+                <li>Developed LLM integration for hardware verification workflows using Claude 3.5 Sonnet API, reducing assertion writing time by 50%</li>
+                <li>Created Python Tkinter interface for Claude API integration in technical environments</li>
+                <li>Built automated meeting assistant using Whisper speech recognition and Claude for transcription and summarization</li>
+                <li>Implemented prompt engineering strategies for technical documentation and verification</li>
+                <li>Researched graph neural network applications for hardware fault prediction and analysis</li>
+                <li>Core member of AI-ML Taskforce focused on machine learning integration in hardware workflows</li>
+                <li>Recipient of "Emerging Talent Award" for innovation in AI-hardware integration solutions</li>
+            </ul>
+        </div>
+        
+        <div class="job">
+            <div class="job-title">Research Intern</div>
+            <div class="job-company">Defence Research and Development Organisation (DRDO)</div>
+            <div class="job-date">2023 – 2024</div>
+            <ul>
+                <li>Developing graph neural network architecture for antenna parameter modeling in planar arrays</li>
+                <li>Implementing graph convolutional layers to capture spatial relationships between components</li>
+                <li>Applying machine learning techniques including dropout and batch normalization for model stability</li>
+                <li>Working with dataset from mathematical simulations for neural network training and validation</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>MACHINE LEARNING PROJECTS</h2>
+        
+        <div class="project">
+            <div class="project-title">LLM for Hardware Verification</div>
+            <div class="project-tech">Python, Claude API, AWS, NLP</div>
+            <ul>
+                <li>Developed specialized prompts for hardware verification with Claude 3.5 Sonnet</li>
+                <li>Created context management systems to maintain technical knowledge in conversations</li>
+                <li>Built Python UI with AWS API integration for LLM-powered assertion generation</li>
+                <li>Optimized interface between traditional verification methodologies and LLM capabilities</li>
+            </ul>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">Meeting Assistant AI</div>
+            <div class="project-tech">Whisper, Python, Claude API, NLP</div>
+            <ul>
+                <li>Created system to automate meeting participation, recording, and documentation</li>
+                <li>Utilized Whisper for speech-to-text transcription of multi-person meetings</li>
+                <li>Integrated Claude API for automated meeting minutes generation</li>
+                <li>Implemented action item extraction and meeting sentiment analysis</li>
+            </ul>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">GNN for Antenna Parameters</div>
+            <div class="project-tech">PyTorch, Graph Neural Networks</div>
+            <ul>
+                <li>Designed GNN architecture for predicting antenna parameters in 8x8 Planar Array</li>
+                <li>Implemented graph convolutional layers to capture spatial and relational dependencies</li>
+                <li>Applied dropout and batch normalization techniques for model stability</li>
+                <li>Developed model to reduce electromagnetic simulation requirements</li>
+            </ul>
+        </div>
+        
+        <div class="project">
+            <div class="project-title">GNN for Functional Safety</div>
+            <div class="project-tech">Python, PyTorch, Graph Neural Networks</div>
+            <ul>
+                <li>Researched graph neural networks for hardware fault prediction</li>
+                <li>Co-authored paper demonstrating 35% improvement in critical fault detection</li>
+                <li>Created graph-based representation of hardware components and failure pathways</li>
+                <li>Presented findings at VLSID Conference 2025</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>SKILLS</h2>
         <ul>
-            <li><strong>Recipient of "Emerging Talent Award"</strong> for exceptional contributions and innovation in AI-hardware integration workflows.</li>
-            <li><strong>LLM Integration in Design Verification Flow:</strong> Developed and optimized large language model prompts for assertion-based verification, creating Python UI for AWS Claude 3.5 Sonnet API integration. Reduced assertion writing time by 50%.</li>
-            <li><strong>Automated Meeting Assistant System:</strong> Architected end-to-end ML solution for meeting automation using speech recognition (Whisper) and Claude 3.5 Sonnet for meeting minutes generation.</li>
-            <li><strong>AI-ML Taskforce:</strong> Core member focused on strategic integration of machine learning in hardware design and verification.</li>
+            <li><strong>ML Frameworks & Libraries:</strong> PyTorch, TensorFlow/Keras, NumPy, Pandas, Scikit-learn, Hugging Face Transformers</li>
+            <li><strong>ML Models & Techniques:</strong> Graph Neural Networks (GNN), Large Language Models (LLM), Transformers, Convolutional Neural Networks (CNN), Transfer Learning, Attention Mechanisms, Prompt Engineering, Fine-tuning</li>
+            <li><strong>Data Processing:</strong> Data Preprocessing, Feature Engineering, Data Visualization, Matplotlib, Seaborn, Dimensionality Reduction</li>
+            <li><strong>MLOps & Deployment:</strong> AWS, REST APIs, Model Serving, Jupyter Notebooks, Git, Docker, Streamlit</li>
+            <li><strong>Programming & Tools:</strong> Python, C++, CUDA, SQL, Linux/Unix, Shell Scripting</li>
+            <li><strong>Hardware & Systems:</strong> FPGA, Verilog, System Verilog, Formal Verification, UVM, Hardware Acceleration, PCB Design, System Architecture</li>
         </ul>
     </div>
-</div>
 
-<div class="section">
-    <h2>MACHINE LEARNING PROJECTS & RESEARCH</h2>
-    
-    <div class="job">
-        <div class="job-title">Neural Network for Antenna Parameter Prediction</div>
-        <div class="job-company">Defence Research and Development Organisation (DRDO)</div>
-        <div class="job-date">Research Intern - Ongoing</div>
-        <ul>
-            <li>Developing GNN architecture with node embeddings for antenna elements in 8x8 Planar Array</li>
-            <li>Implementing graph convolutional layers to capture spatial and relational dependencies</li>
-            <li>Utilizing mathematical simulation dataset for training</li>
-        </ul>
+    <div class="section">
+        <h2>EDUCATION & ACHIEVEMENTS</h2>
+        <div class="job">
+            <div class="job-title">Bachelor of Technology – Electronics and Communication Engineering</div>
+            <div class="job-company">Motilal Nehru National Institute of Technology, Prayagraj</div>
+            <div class="job-date">2020-2024</div>
+            <p>GPA: 8.05</p>
+        </div>
+        
+        <p><strong>"Emerging Talent Award"</strong> – Texas Instruments (2024)<br>
+        Recognized for exceptional contributions to AI integration in hardware verification workflows</p>
+        
+        <p><strong>Research Publication:</strong> "Improving Failure Mode Analysis and Fault Injection Using GNN Algorithms" – VLSID Conference 2025</p>
     </div>
-    
-    <div class="job">
-        <div class="job-title">Advancing Functional Safety with GNN</div>
-        <div class="job-company">VLSID Conference Paper</div>
-        <div class="job-date">Under Review</div>
-        <ul>
-            <li>Authored paper on "Improving Failure mode analysis and Fault injection using automation and GNN algorithm"</li>
-            <li>Developed graph-based representation of hardware components and failure pathways</li>
-            <li>Implemented GNN algorithms to improve fault prediction and analysis</li>
-        </ul>
-    </div>
-</div>
-
-<div class="section">
-    <h2>HARDWARE ENGINEERING EXPERIENCE</h2>
-    
-    <div class="job">
-        <div class="job-title">Antenna Beam Controller Design</div>
-        <div class="job-company">Electronics Research and Development Establishment (LRDE), DRDO</div>
-        <div class="job-date">Research Intern - Summer 2023</div>
-        <ul>
-            <li>Designed FPGA firmware using VHDL/Verilog for military radar antenna controller</li>
-            <li>Implemented SPI and UART communication interfaces between control systems</li>
-            <li>Conducted 3D beam-pattern analysis using MATLAB</li>
-        </ul>
-    </div>
-    
-    <div class="job">
-        <div class="job-title">RISC-V Based Single Core Processor Design</div>
-        <div class="job-company">Academic Project</div>
-        <ul>
-            <li>Designed and implemented RISC-V processor supporting RV32I instruction set using Verilog HDL</li>
-            <li>Developed core components including pipeline stages and control units</li>
-            <li>Performed simulation and verification using ModelSim</li>
-        </ul>
-    </div>
-</div>
-
-<div class="section">
-    <h2>EDUCATION</h2>
-    <div class="job">
-        <div class="job-title">Bachelor of Technology - Electronics and Communication Engineering</div>
-        <div class="job-company">Motilal Nehru National Institute of Technology, Prayagraj, India</div>
-        <div class="job-date">2020-2024 | GPA: 8.05</div>
-    </div>
-</div>
-
-<div class="section">
-    <h2>SKILLS</h2>
-    <div class="skills">
-        <div class="skill">Graph Neural Networks</div>
-        <div class="skill">PyTorch</div>
-        <div class="skill">Natural Language Processing</div>
-        <div class="skill">Claude API</div>
-        <div class="skill">OpenAI Whisper</div>
-        <div class="skill">Python</div>
-        <div class="skill">C++</div>
-        <div class="skill">AWS</div>
-        <div class="skill">Verilog</div>
-        <div class="skill">FPGA</div>
-        <div class="skill">UVM</div>
-        <div class="skill">Formal Verification</div>
-        <div class="skill">PCB Design</div>
-        <div class="skill">Tkinter</div>
-    </div>
-</div>
-</body>
-</html>
+    </body>
+    </html>
         `;
         
         try {
